@@ -1,8 +1,9 @@
 ---
 plan: morning-digest
-status: ready
+status: done
 owner: rook
 opened: 2026-10-29
+closed: 2026-11-17
 ---
 
 # Morning digest
@@ -77,3 +78,27 @@ page again with `LANE_MARKER` unset (the banner reads "no marker set") and uploa
 link. Move this plan to `docs/plans/done/` with its issue list.
 
 Done when: the preview link no longer shows the lane marker.
+
+## Issues
+
+| # | Issue | Blocked by | Worker | Completed |
+|---|-------|-----------|--------|--------|
+| [1](https://github.com/grotos/rig-morning-digest/issues/1) | Read and aggregate a night’s run log | — | OpenCode · worker model not reported · default effort | 2026-11-17 |
+| [2](https://github.com/grotos/rig-morning-digest/issues/2) | Render the digest page | #1 | OpenCode · worker model not reported · default effort | 2026-11-17 |
+| [3](https://github.com/grotos/rig-morning-digest/issues/3) | Add the digest JSON endpoint | #1 | OpenCode · worker model not reported · default effort | 2026-11-17 |
+| [4](https://github.com/grotos/rig-morning-digest/issues/4) | Link nights from the status board | #1 | OpenCode · worker model not reported · default effort | 2026-11-17 |
+| [5](https://github.com/grotos/rig-morning-digest/issues/5) | Test the digest routes | #1 | OpenCode · worker model not reported · default effort | 2026-11-17 |
+| [6](https://github.com/grotos/rig-morning-digest/issues/6) | Publish the review preview | #2 | OpenCode · litellm/gpt-6.1-sol · effort unknown | 2026-11-17 |
+| [7](https://github.com/grotos/rig-morning-digest/issues/7) | Remove the preview marker and archive the plan | #6 and review | OpenCode · litellm/gpt-6.1-sol · effort unknown | 2026-11-17 |
+
+## Completion and cleanup
+
+Implementation, preview review, and cleanup completed on 2026-11-17. The tracker links above
+are authoritative for issue state. Worker details above reproduce the recorded issue comments
+where available; the archive worker's effort was not exposed.
+
+On 2026-11-17, the main harness reported saving a fresh copy of `/digest/2026-10-28` by HTTP
+fetch from the live Hono server with `LANE_MARKER` unset, uploading it over the same public
+preview link, and verifying that the banner reads "no marker set". It also deleted the old
+marked deployment and verified that its deployment-specific URL returns HTTP 404.
+No preview HTML, lane marker value, or credentials are included in this archive.
